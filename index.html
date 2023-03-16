@@ -14,7 +14,7 @@
 <body dir="rtl">
     <div id="app">
         <div class="header">
-            <div class="left">آچاره</div>
+            <div class="left" style="color:rgb(51,255,255)">آچاره</div>
             <div class="right">
                 <nav class="navlink">
                     <ul class="ul-menu">
@@ -61,10 +61,13 @@
                     <div class="map">Google Map</div>
                     <button type="button" class="btn btn-default" @click = "mapInfoFunction()">ثبت و ادامه</button>
                 </div>
-                <div v-if = "informationPage" class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div v-if = "informationPage" class="card" v-for="item in userInfo">
+                    <div class="card-body" >
+                      <p class="card-text">نام : {{item.name}}</p>
+                      <p class="card-text">نام خانوادگی : {{item.lastname}}</p>
+                      <p class="card-text">شماره موبایل : {{item.phoneNumber}}</p>
+                      <p class="card-text">شماره تلفن ثابت : {{item.homeNumber}}</p>
+                      <p class="card-text">آدرس : {{item.address}}</p>
                     </div>
                 </div>
             </div>
