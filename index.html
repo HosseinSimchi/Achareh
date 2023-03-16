@@ -12,22 +12,23 @@
     <title>Achareh</title>
 </head>
 <body dir="rtl">
-    <div class="header">
-        <div class="left">آچاره</div>
-        <div class="right">
-            <nav class="navlink">
-                <ul class="ul-menu">
-                    <li class="li-menu">ثبت ادرس جدید</li>
-                    <li class="li-menu">مشاهده ادرس ها</li>
-                </ul>
-            </nav>
-        </div>
-    </div>
     <div id="app">
+        <div class="header">
+            <div class="left">آچاره</div>
+            <div class="right">
+                <nav class="navlink">
+                    <ul class="ul-menu">
+                        <button class="li-menu" @click="sabt()">ثبت ادرس جدید</button>
+                        <button class="li-menu" @click="showInfo()">مشاهده ادرس ها</button>
+                    </ul>
+                </nav>
+            </div>
+        </div>
         <div class="register">
-            <div v-if = "passedFormPage" class="container">
-                <h2>ثبت آدرس </h2>
-                <form class="form-register">
+            <div class="container">
+                <h2 v-if = "!informationPage" >ثبت آدرس </h2>
+                <h2 v-if = "informationPage">آدرس ها و مشخصات</h2>
+                <form v-if = "passedFormPage" class="form-register">
                     <h4>لطفا مشخصات وآدرس خود را وارد نمایید</h4>
                     <div class="form-group">
                         <label for="email">نام</label>
@@ -56,13 +57,16 @@
                     </div>
                     <button type="button"  class="btn btn-default" @click="postData()">ثبت و ادامه</button>
                 </form>
-            </div>
-            <div v-if = "passedGooglePage" class="google-map">
-                <div class="map">Google Map</div>
-                <button type="button" class="btn btn-default" @click = "mapInfoFunction()">ثبت و ادامه</button>
-            </div>
-            <div v-if = "informationPage" class="info">
-                <h1>Information Page is here</h1>
+                <div v-if = "passedGooglePage" class="google-map">
+                    <div class="map">Google Map</div>
+                    <button type="button" class="btn btn-default" @click = "mapInfoFunction()">ثبت و ادامه</button>
+                </div>
+                <div v-if = "informationPage" class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -15,36 +15,23 @@ createApp({
       }
     },  
     methods : {
+      sabt() {
+        this.mapInfo = false
+        this.passedGooglePage = false
+        this.informationPage = false
+        this.passedFormPage = true
+        this.name = this.lastName = this.phoneNumber = this.homeNumber = '';
+      },
+      showInfo(){
+        this.mapInfo = false
+        this.passedGooglePage = false
+        this.passedFormPage = false
+        this.informationPage = true
+      },
       mapInfoFunction(){
         this.mapInfo = true
         this.passedGooglePage = false
         this.informationPage = true
-
-        async function postDataToApi(url="", data={}){
-          const response = await fetch(url, {
-            method: "POST",
-            headers:{'Content-type': 'application/json', 'Authorization' :'Basic MDkxMjEwNzAxNTc6QWNoYXJlaEAxMjM0'},
-            body: JSON.stringify(data)
-          })
-        }
-
-        postDataToApi("https://stage.achareh.ir/api/karfarmas/address", {
-          first_name : this.name ,
-          last_name : this.lastName ,
-          coordinate_mobile : this.phoneNumber,
-          coordinate_phone_number : this.homeNumber,
-          address : this.address,
-          region : '1',
-          lat : 12.256658,
-          lng : 25.8988989,
-          gender : 'male'
-        })
-        .then((response) => {
-          return response.json()
-        })
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
-
         console.log(this.name, this.lastName,this.phoneNumber, this.homeNumber, this.address)
       },
       postData(){
@@ -62,3 +49,31 @@ createApp({
       }
     }
   }).mount('#app')
+
+
+  // async function postDataToApi(url="", data={}){
+  //   try{
+  //     const response = await fetch(url, {
+  //       method: "POST",
+  //       headers:{
+  //       'Content-Type': 'application/json', 'Authorization' :'Basic MDkxMjEwNzAxNTc6QWNoYXJlaEAxMjM0'},
+  //       body: JSON.stringify(data)
+  //     })
+  //     const datas = await response.json()
+  //     console.log(datas)
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  // }
+
+  // postDataToApi("https://stage.achareh.ir/api/karfarmas/address", {
+  //   first_name : 'this.name' ,
+  //   last_name : 'this.lastName' ,
+  //   coordinate_mobile : 'this.phoneNumber',
+  //   coordinate_phone_number : 'this.homeNumber',
+  //   address : 'this.address',
+  //   region : '1',
+  //   lat : 12.256658,
+  //   lng : 25.8988989,
+  //   gender : 'male'
+  // })

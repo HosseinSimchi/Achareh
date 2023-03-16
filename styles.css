@@ -1,17 +1,32 @@
+@font-face {
+    font-family: "Vazir";
+    src: url("./Vazir.eot");
+    src: url("./Vazir.eot?#iefix") format("embedded-opentype"),
+      url("./Vazir.woff2") format("woff2"),
+      url("./Vazir.woff") format("woff"),
+      url("./Vazir.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
 *{
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Vazir';
 }
 
 .header {
-    background-image: linear-gradient();
+    background-image: linear-gradient(to left, rgb(0,204,204), rgb(0,255,255));
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    margin-bottom: 5px;
     width: 100%;
     height: 8vh;
+    border-bottom : 2px solid rgb(0,153,153);
+    border-radius: 2px;
 }
 .ul-menu {
     display: flex;
@@ -21,10 +36,15 @@
     margin-left: 50px;
     margin-top: 8px;
     cursor: pointer;
-    background-color: blue;
+    background-color: rgb(0,153,153);
+    color: rgb(102,255,255);
     padding: 5px;
     border-radius: 4px;
-    border: 1px solid blanchedalmond;   
+    border: 3px dashed rgb(0,51,51);   
+}
+.li-menu:hover{
+    background-color: rgb(102,255,255);
+    color:rgb(0,153,153);
 }
 .left {
     font-size: 30px;
@@ -34,28 +54,31 @@
 }
 
 .register{
-    margin-top: 25px;
     display: flex;
 }
 .container {
-    width : 50% !important;
-    background-color: aqua;
+    background-color:rgb(224,224,224);
+    border-radius:5px;
+    border : 3px dashed black;
 }
 .google-map {
     display: flex;
     padding : 10px;
     flex-direction: column;
-    background-color: bisque;
-    width : 50% !important;
+    background-color:white;  
+    border : 3px dashed black;
+    margin-bottom: 10px;
 }
 .form-register {
     display: flex;
-    padding: 10px;
+    padding : 15px;
     flex-direction: column;
+    background-color:white;  
+    border : 3px dashed black;
+    margin-bottom: 10px;
 }
 
 .map {
-    background-color: yellow;
     margin:50px;
     height: 80%;
     width : 80%;
@@ -63,4 +86,11 @@
 
 .danger {
     color: red;
+}
+
+.card {
+    padding:10px;
+    background-color:white;  
+    border : 3px dashed black;
+    margin-bottom: 10px;
 }
