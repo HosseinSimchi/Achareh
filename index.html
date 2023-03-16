@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Achareh</title>
 </head>
 <body dir="rtl">
@@ -18,6 +21,49 @@
                     <li class="li-menu">مشاهده ادرس ها</li>
                 </ul>
             </nav>
+        </div>
+    </div>
+    <div id="app">
+        <div class="register">
+            <div v-if = "passedFormPage" class="container">
+                <h2>ثبت آدرس </h2>
+                <form class="form-register">
+                    <h4>لطفا مشخصات وآدرس خود را وارد نمایید</h4>
+                    <div class="form-group">
+                        <label for="email">نام</label>
+                        <input type="text" class="form-control" placeholder="مثال : حسین" v-model="name" >
+                        <p class="danger" v-if="name.length < 3 ? true : false">حداقل 3 حرف وارد نمایید</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">نام خانوادگی</label>
+                        <input type="text" class="form-control" placeholder="مثال : سیم چی" v-model="lastName">
+                        <p class="danger" v-if="lastName.length < 3 ? true : false">حداقل 3 حرف وارد نمایید</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">شماره تلفن همراه</label>
+                        <input type="text" class="form-control" placeholder="مثال : 09351996829" v-model="phoneNumber" >
+                        <p class="danger" v-if="phoneNumber.length < 11 ? true : false">حداقل 11 شماره وارد نمایید</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">شماره تلفن ثابت</label>
+                        <input type="text" class="form-control" placeholder="مثال : 02133059382" v-model="homeNumber">
+                        <p class="danger" v-if="homeNumber.length < 11 ? true : false">حداقل 11 شماره وارد نمایید</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd"> آدرس </label>
+                        <input type="text" class="form-control" v-model="address">
+                        <p class="danger" v-if="address.length < 10 ? true : false">حداقل 10 حرف وارد نمایید</p>
+                    </div>
+                    <button type="button"  class="btn btn-default" @click="postData()">ثبت و ادامه</button>
+                </form>
+            </div>
+            <div v-if = "passedGooglePage" class="google-map">
+                <div class="map">Google Map</div>
+                <button type="button" class="btn btn-default" @click = "mapInfoFunction()">ثبت و ادامه</button>
+            </div>
+            <div v-if = "informationPage" class="info">
+                <h1>Information Page is here</h1>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="./script.js"></script>

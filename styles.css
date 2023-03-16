@@ -32,3 +32,35 @@
     margin-top: 8px;
     cursor: pointer ;
 }
+
+.register{
+    margin-top: 25px;
+    display: flex;
+}
+.container {
+    width : 50% !important;
+    background-color: aqua;
+}
+.google-map {
+    display: flex;
+    padding : 10px;
+    flex-direction: column;
+    background-color: bisque;
+    width : 50% !important;
+}
+.form-register {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.map {
+    background-color: yellow;
+    margin:50px;
+    height: 80%;
+    width : 80%;
+}
+
+.danger {
+    color: red;
+}
