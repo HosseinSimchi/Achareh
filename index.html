@@ -58,7 +58,7 @@
                     <button type="button"  class="btn btn-default" @click="postData()">ثبت و ادامه</button>
                 </form>
                 <div v-if = "passedGooglePage" class="google-map">
-                    <div class="map">Google Map</div>
+                    <div class="map" id="map">برای دریافت API_KEY باید ثبت نام کرد و سایت بدون فیلترشکن باز نمی شود درنتیجه برای دریافت باید مشخصات شهر فیلترشکن را وارد کرد و بعد به همین دلیل مشخصاتی از قبیل کارت بانکی و .. را میخواهد که ممکن نیست. همچنین مکان ایران جهت انتخاب موجود نبود. برای درخواست ذخیره و دریافت اطلاعات از API داده شده هم هربار با ارورهای مختلف رو به رو شدم که متاسفانه نشد تا با API ارتباط برقرار کنم. و لذا برای ذخیره ادرس و مشخصات از لیست ها استفاده کرده ام. ولی کدهای مربوط به GOOGLE MAP و API را به صورت کامنت در قسمت SCRIPT.JS قرار داده ام. متشکرم</div>
                     <button type="button" class="btn btn-default" @click = "mapInfoFunction()">ثبت و ادامه</button>
                 </div>
                 <div v-if = "informationPage" class="card" v-for="item in userInfo">

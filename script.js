@@ -54,12 +54,32 @@ createApp({
     }
   }).mount('#app')
 
-/* Google Map Platform
+/*  Google Map Platform
 
+const initMap = () => {
+  let options = {
+    zoom:8,
+    center : {lat:52.587, lng:-62.859}
+  }
 
+  let map = new google.maps.Map(document.getElementById('map'), options);
+
+  const addMarker = (coords) => {
+    let marker = new google.maps.Marker({
+      position:coords,
+      map,
+  })
+  }
+
+  google.maps.event.addListener(map, 'click', (event) => {
+      addMarker({coords:event.latlng}) //GET LNG and LAT
+  })
+
+}
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 
 */
-
 
 /* Using The API to SEND and GET DAta 
 
